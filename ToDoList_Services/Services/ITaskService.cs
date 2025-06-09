@@ -1,6 +1,5 @@
 ﻿using ToDoList_Data.Models;
 using ToDoList_Services.Models;
-
 namespace ToDoList_Services.Services;
 
 public interface ITaskService

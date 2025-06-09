@@ -7,7 +7,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ToDoList_Data\ToDoList_Data.csproj" />
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+        <ProjectReference Include="..\ToDoList_Data\ToDoList_Data.csproj" />
     </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="9.0.5" />
+    </ItemGroup>
+
 
 </Project>

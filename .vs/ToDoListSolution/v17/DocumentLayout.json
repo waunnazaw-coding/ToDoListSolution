@@ -1,0 +1,134 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\ToDoListSolution\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4EB48236-35F2-4770-BEEC-E69F3235C4B9}|ToDoList_Services\\ToDoList_Services.csproj|d:\\todolistsolution\\todolist_services\\services\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EB48236-35F2-4770-BEEC-E69F3235C4B9}|ToDoList_Services\\ToDoList_Services.csproj|solutionrelative:todolist_services\\services\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4EB48236-35F2-4770-BEEC-E69F3235C4B9}|ToDoList_Services\\ToDoList_Services.csproj|d:\\todolistsolution\\todolist_services\\todolist_services.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4EB48236-35F2-4770-BEEC-E69F3235C4B9}|ToDoList_Services\\ToDoList_Services.csproj|solutionrelative:todolist_services\\todolist_services.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4EB48236-35F2-4770-BEEC-E69F3235C4B9}|ToDoList_Services\\ToDoList_Services.csproj|d:\\todolistsolution\\todolist_services\\services\\itaskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EB48236-35F2-4770-BEEC-E69F3235C4B9}|ToDoList_Services\\ToDoList_Services.csproj|solutionrelative:todolist_services\\services\\itaskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66186DB5-24B2-4A70-8017-048A22E2F9FA}|ToDoList_Api\\ToDoList_Api.csproj|d:\\todolistsolution\\todolist_api\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66186DB5-24B2-4A70-8017-048A22E2F9FA}|ToDoList_Api\\ToDoList_Api.csproj|solutionrelative:todolist_api\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4EB48236-35F2-4770-BEEC-E69F3235C4B9}|ToDoList_Services\\ToDoList_Services.csproj|d:\\todolistsolution\\todolist_services\\models\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EB48236-35F2-4770-BEEC-E69F3235C4B9}|ToDoList_Services\\ToDoList_Services.csproj|solutionrelative:todolist_services\\models\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66186DB5-24B2-4A70-8017-048A22E2F9FA}|ToDoList_Api\\ToDoList_Api.csproj|d:\\todolistsolution\\todolist_api\\todolist_api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{66186DB5-24B2-4A70-8017-048A22E2F9FA}|ToDoList_Api\\ToDoList_Api.csproj|solutionrelative:todolist_api\\todolist_api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TaskService.cs",
+              "DocumentMoniker": "D:\\ToDoListSolution\\ToDoList_Services\\Services\\TaskService.cs",
+              "RelativeDocumentMoniker": "ToDoList_Services\\Services\\TaskService.cs",
+              "ToolTip": "D:\\ToDoListSolution\\ToDoList_Services\\Services\\TaskService.cs",
+              "RelativeToolTip": "ToDoList_Services\\Services\\TaskService.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwGIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T17:52:46.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TaskController.cs",
+              "DocumentMoniker": "D:\\ToDoListSolution\\ToDoList_Api\\Controllers\\TaskController.cs",
+              "RelativeDocumentMoniker": "ToDoList_Api\\Controllers\\TaskController.cs",
+              "ToolTip": "D:\\ToDoListSolution\\ToDoList_Api\\Controllers\\TaskController.cs",
+              "RelativeToolTip": "ToDoList_Api\\Controllers\\TaskController.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAwwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T17:05:52.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ITaskService.cs",
+              "DocumentMoniker": "D:\\ToDoListSolution\\ToDoList_Services\\Services\\ITaskService.cs",
+              "RelativeDocumentMoniker": "ToDoList_Services\\Services\\ITaskService.cs",
+              "ToolTip": "D:\\ToDoListSolution\\ToDoList_Services\\Services\\ITaskService.cs",
+              "RelativeToolTip": "ToDoList_Services\\Services\\ITaskService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T16:50:38.577Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ToDoList_Api",
+              "DocumentMoniker": "D:\\ToDoListSolution\\ToDoList_Api\\ToDoList_Api.csproj",
+              "RelativeDocumentMoniker": "ToDoList_Api\\ToDoList_Api.csproj",
+              "ToolTip": "D:\\ToDoListSolution\\ToDoList_Api\\ToDoList_Api.csproj",
+              "RelativeToolTip": "ToDoList_Api\\ToDoList_Api.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-09T16:47:51.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Result.cs",
+              "DocumentMoniker": "D:\\ToDoListSolution\\ToDoList_Services\\Models\\Result.cs",
+              "RelativeDocumentMoniker": "ToDoList_Services\\Models\\Result.cs",
+              "ToolTip": "D:\\ToDoListSolution\\ToDoList_Services\\Models\\Result.cs",
+              "RelativeToolTip": "ToDoList_Services\\Models\\Result.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAIwDAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T16:46:32.849Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ToDoList_Services",
+              "DocumentMoniker": "D:\\ToDoListSolution\\ToDoList_Services\\ToDoList_Services.csproj",
+              "RelativeDocumentMoniker": "ToDoList_Services\\ToDoList_Services.csproj",
+              "ToolTip": "D:\\ToDoListSolution\\ToDoList_Services\\ToDoList_Services.csproj",
+              "RelativeToolTip": "ToDoList_Services\\ToDoList_Services.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-09T16:46:17.619Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

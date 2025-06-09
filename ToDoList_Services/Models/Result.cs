@@ -1,4 +1,5 @@
 ﻿namespace ToDoList_Services.Models;
+using Microsoft.AspNetCore.Http;
 
 public class Result<T>
 {
@@ -45,4 +46,17 @@ public class Result<T>
         return item;
     }
 
+    public IResult Execute()
+    {
+        if (this.IsValidationError)
+            return Results.BadRequest(this);
+
+        if (this.IsNotFoundError)
+            return Results.NotFound(this);
+
+        if (this.IsError)
+            return Results.StatusCode(500);
+
+        return Results.Ok(this);
+    }
 }
