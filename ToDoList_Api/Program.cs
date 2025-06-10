@@ -6,6 +6,7 @@ using ToDoList_Data.Models; // Assuming this contains your AppDbContext
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddMemoryCache();
 // Add services to the container.
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
