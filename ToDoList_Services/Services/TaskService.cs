@@ -2,6 +2,7 @@
 using ToDoList_Data.Models;
 using ToDoList_Data.Repositories;
 using ToDoList_Services.Models;
+using System.Threading;
 
 namespace ToDoList_Services.Services;
 
@@ -9,6 +10,9 @@ public class TaskService : ITaskService
 {
     private readonly ITaskRepository _taskRepository;
     private readonly IMemoryCache _cache;
+    private static readonly SemaphoreSlim _allTasksLock = new(1, 1);
+    private static readonly SemaphoreSlim _taskLock = new(1, 1);
+
 
     public TaskService(ITaskRepository taskRepository, IMemoryCache cache)
     {
@@ -22,16 +26,34 @@ public class TaskService : ITaskService
 
         if (_cache.TryGetValue(cacheKey, out ToDoItem cachedTask))
         {
-            return Result<ToDoItem>.Success(cachedTask);
+            return Result<ToDoItem>.Success(cachedTask , "Task Retrieved Successfully.");
         }
 
-        var task = await _taskRepository.GetByIdAsync(id);
-        if (task == null)
-            return Result<ToDoItem>.NotFoundError($"Task with ID {id} not found.");
+        await _taskLock.WaitAsync();
+        try
+        {
+            // Double-check after acquiring lock
+            if (_cache.TryGetValue(cacheKey, out cachedTask))
+            {
+                return Result<ToDoItem>.Success(cachedTask , "Task Retrieved Successfully.");
+            }
 
-        _cache.Set(cacheKey, task, TimeSpan.FromMinutes(5)); // Cache for 5 minutes
+            var task = await _taskRepository.GetByIdAsync(id);
+            if (task == null)
+                return Result<ToDoItem>.NotFoundError($"Task with ID {id} not found.");
 
-        return Result<ToDoItem>.Success(task);
+            var cacheOptions = new MemoryCacheEntryOptions()
+                .SetSlidingExpiration(TimeSpan.FromSeconds(30))
+                .SetAbsoluteExpiration(TimeSpan.FromSeconds(300))
+                .SetPriority(CacheItemPriority.Normal);
+
+            _cache.Set(cacheKey, task, cacheOptions);
+            return Result<ToDoItem>.Success(task , "Task Retrieved Successfully.");
+        }
+        finally
+        {
+            _taskLock.Release();
+        }
     }
 
     public async Task<Result<List<ToDoItem>>> GetAllAsync()
@@ -40,14 +62,33 @@ public class TaskService : ITaskService
 
         if (_cache.TryGetValue(cacheKey, out List<ToDoItem> cachedTasks))
         {
-            return Result<List<ToDoItem>>.Success(cachedTasks);
+            return Result<List<ToDoItem>>.Success(cachedTasks , "Tasks Retrieved Successfully.");
         }
 
-        var tasks = await _taskRepository.GetAllAsync();
+        await _allTasksLock.WaitAsync();
+        try
+        {
+            // Double-check after acquiring lock
+            if (_cache.TryGetValue(cacheKey, out cachedTasks))
+            {
+                return Result<List<ToDoItem>>.Success(cachedTasks, "Tasks Retrieved Successfully.");
+            }
 
-        _cache.Set(cacheKey, tasks, TimeSpan.FromMinutes(5)); // Cache for 5 minutes
+            var tasks = await _taskRepository.GetAllAsync();
+            var cacheOptions = new MemoryCacheEntryOptions()
+                .SetSlidingExpiration(TimeSpan.FromSeconds(30))
+                .SetAbsoluteExpiration(TimeSpan.FromSeconds(300))
+                .SetPriority(CacheItemPriority.NeverRemove)
+                .SetSize(2048);
 
-        return Result<List<ToDoItem>>.Success(tasks);
+            _cache.Set(cacheKey, tasks, cacheOptions);
+
+            return Result<List<ToDoItem>>.Success(tasks , "Tasks Retrieved Successfully.");
+        }
+        finally
+        {
+            _allTasksLock.Release();
+        }
     }
 
     public async Task<Result<ToDoItem>> AddAsync(ToDoItem task)
@@ -57,7 +98,7 @@ public class TaskService : ITaskService
 
         await _taskRepository.AddAsync(task);
 
-        // Invalidate cache
+        // Invalidate related cache
         _cache.Remove("AllTasks");
 
         return Result<ToDoItem>.Success(task, "Task added successfully.");
@@ -74,7 +115,7 @@ public class TaskService : ITaskService
 
         await _taskRepository.UpdateAsync(task);
 
-        // Invalidate cache
+        // Invalidate related cache
         _cache.Remove("AllTasks");
         _cache.Remove($"Task_{task.TaskId}");
 
@@ -89,7 +130,7 @@ public class TaskService : ITaskService
 
         await _taskRepository.DeleteAsync(id);
 
-        // Invalidate cache
+        // Invalidate related cache
         _cache.Remove("AllTasks");
         _cache.Remove($"Task_{id}");
 

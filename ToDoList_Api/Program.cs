@@ -1,8 +1,10 @@
+using System.Configuration;
 using Microsoft.EntityFrameworkCore;
 using ToDoList_Data.Repositories;
 using ToDoList_Services.Services;
 using ToDoList_Data;
-using ToDoList_Data.Models; // Assuming this contains your AppDbContext
+using ToDoList_Data.Models;
+using ToDoList_Services; // Assuming this contains your AppDbContext
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,14 +20,9 @@ builder.Services.AddSwaggerGen(options =>
         Description = "An API for managing to-do items"
     });
 });
+builder.Services.AddData(builder.Configuration.GetConnectionString("DefaultConnection"));
 
-// Add DbContext with connection string from appsettings.json
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-// Register repositories and services
-builder.Services.AddScoped<ITaskRepository, TaskRepository>();
-builder.Services.AddScoped<ITaskService, TaskService>();
+builder.AddDomain();
 
 // Add controllers
 builder.Services.AddControllers();
